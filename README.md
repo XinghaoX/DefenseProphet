@@ -26,6 +26,31 @@ python -c "import torch, transformers, pandas, tqdm, safetensors; from transform
 prodigal -v
 ```
 
+## Model Weights
+
+The model weights are hosted at [XinghaoX/DefenseProphet](https://huggingface.co/XinghaoX/DefenseProphet). From the project root, download them into the existing `models/` directories:
+
+```bash
+hf download XinghaoX/DefenseProphet \
+  debert_binary_150M/model.safetensors \
+  debert_multi_150M/model.safetensors \
+  --local-dir models
+```
+
+After downloading, the model files should be arranged as follows:
+
+```text
+models/
+  debert_binary_150M/
+    config.json
+    model.safetensors
+  debert_multi_150M/
+    config.json
+    model.safetensors
+```
+
+The small `config.json` files are included in this repository. The downloaded `model.safetensors` files contain the model weights.
+
 ## Example Data
 
 The `examples/` folder contains one GTDB example in the three input forms accepted by the inference script:
