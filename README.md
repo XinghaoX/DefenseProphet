@@ -1,4 +1,12 @@
-# DefenseProphet Inference
+# DefenseProphet
+
+DefenseProphet is a protein-context model for identifying prokaryotic defense genes and predicting their defense-gene classes.
+
+![DefenseProphet workflow](DefenseProphet.png)
+
+*Overview of the DefenseProphet workflow. Defense-related loci are constructed from RefSeq prokaryotic genomes and DefenseFinder annotations, then segmented into sliding windows of 64 proteins. Each protein sequence is encoded with ESM2-150M and mean pooled to produce a 64 x 640 protein-level embedding matrix. Separate binary and multi-class DeBERTa token-classification models predict defense/other labels and defense-gene classes at each protein position. For multi-gene defense systems, model predictions can be further interpreted and filtered using defense-system composition rules.*
+
+## Inference Modes
 
 DefenseProphet supports three inference entry points:
 
